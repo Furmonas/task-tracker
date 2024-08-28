@@ -1,3 +1,12 @@
+mod cli;
+mod tasks;
+
+use cli::*;
+
 fn main() {
-    println!("Hello, world!");
+    let cmd_proc = match parse_cmd() {
+        Ok(cmd_proc) => cmd_proc,
+        Err(e) => return,
+    };
+    cmd_proc.process_command();
 }
