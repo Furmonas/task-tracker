@@ -1,5 +1,3 @@
-use super::*;
-
 pub trait CommandProc {
     fn process_command(&self);
 }
